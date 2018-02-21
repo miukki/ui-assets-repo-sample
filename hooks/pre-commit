@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo 'pre commit hook'
+
+
+echo 'run lint'
+yarn run lint || exit 1
+echo 'lint =>> ok'
+
+exit 0

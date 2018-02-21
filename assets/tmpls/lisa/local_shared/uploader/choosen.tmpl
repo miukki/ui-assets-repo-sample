@@ -1,0 +1,64 @@
+<table class="table" ng-init="scope=$parent">
+  <thead>
+    <th>材料类型</th>
+    <th width="50%">文件名称</th>
+    <th width="10%">状态</th>
+    <th width="15%">操作</th>
+  </thead>
+
+
+  <!-- local -->
+  <tbody>
+    <tr ng-repeat="(key, data) in _data.file_tags " ng-if="data">
+      <td>{{data.description}}</td>
+      <td>
+        <span class="fa fa-file-pdf-o"></span> File Tag Id: {{data.file_tag_id}},
+        <span ng-class="{'form-invalid': form['file_tag_path{{data.file_tag_id}}'].$invalid }">{{ data.path | URIComponent:'decode' }}</span>
+        <input ng-init="_data['file_tag_path'+data.file_tag_id]=data.path" type="text" name="file_tag_path{{data.file_tag_id}}" dynamic-model="'_data.file_tag_path'+data.file_tag_id " hidden />
+
+        <br/>
+        <p class="caption text-danger" ng-show="form['file_tag_size{{data.file_tag_id}}'].$invalid">
+          {{form['file_tag_size'+data.file_tag_id].message}}
+          <input ng-init="_data['file_tag_size'+data.file_tag_id]=data.size" type="text" name="file_tag_size{{data.file_tag_id}}" dynamic-model="'_data.file_tag_size'+data.file_tag_id " hidden />
+        </p>
+
+        <p class="caption text-danger" ng-show="form['file_tag_path{{data.file_tag_id}}'].$invalid">
+          {{form['file_tag_path'+data.file_tag_id].message}}
+        </p>
+
+      </td>
+      <td>
+        本地文件
+      </td>
+      <td>
+        <button ng-show="!data.uploaded" class="btn btn-mute-danger btn-thin" ng-click="removeFile(key);">
+          <i class="glyphicon glyphicon-trash icon"></i> 删除
+        </button>
+
+        <div ng-show="data.uploaded">
+          <span class="fa icon" ng-class="{ 'fa-check': data.uploaded}"></span> Uploaded
+        </div>
+      </td>
+    </tr>
+  </tbody>
+
+  <!-- external -->
+  <tbody>
+    <tr ng-repeat="data in extFilesFiltered track by $index" ng-class="{'external': _data.file_tags[data.file_tag_id] && _data.file_tags[data.file_tag_id].external}">
+      <td>签字合同扫描件 </td>
+      <td>
+        <span class="fa fa-file-pdf-o"></span> File Tag Id: {{data.file_tag_id}},
+        <span>{{ data.name }}</span>
+      </td>
+      <td>
+        外部文件
+      </td>
+      <td>
+        <button class="btn btn-mute-danger btn-thin" ng-click="removeExtFile(data.uuid);">
+          <i class="glyphicon glyphicon-trash icon"></i> 删除
+        </button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

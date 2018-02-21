@@ -1,0 +1,33 @@
+<div class="row" ng-init="scope=$parent">
+
+  <div class="col-xs-6">
+  </div>
+
+  <div class="col-xs-6 text-top-right">
+    <div class="btn btn-mute" uib-dropdown on-toggle="toggled(open)">
+
+
+      <span id="simple-dropdown" uib-dropdown-toggle>
+        <span class="fa fa-plus icon"></span>上传文件 ({{file_tags.length}}类)
+      </span>
+      <div class="table-sup"><i class="glyphicon glyphicon-info-sign"></i>上传文件仅支持 {{type || '(PDF)'}} 格式</div>
+      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+        <li ng-click="t.id && chooseFile(t.id, t.description);" ng-repeat="t in file_tags">
+          <!--onchange="angular.element(this).scope().saveFileChanged(this)" hack-->
+          <a href="javascript:void(0)">{{t.description || t.name}}</a>
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+
+
+  <!--file data -->
+  <input name="file" type="file" pick-files="getPickedFiles(file)" hidden ng-hide="true" />
+  <!--<input name="path" ng-model="_data.path" type="text" hidden />
+    <input name="size" ng-model="_data.size" type="text" hidden />-->
+
+</div>
+
+<div ng-include="'local_shared/uploader/choosen.tmpl'" ng-init="form=scope.form" include-replace></div>

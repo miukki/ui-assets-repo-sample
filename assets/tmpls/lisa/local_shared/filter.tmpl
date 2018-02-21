@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <form name="filterForm" novalidate json-schema="main.schema" json-schema-model="main._data">
+    <div class="header-title">
+      <div class="row">
+        <!-- header -->
+        <ng-transclude></ng-transclude>
+
+        <div class="col-xs-7 clearfix text-right">
+          <div class="pull-right">
+            <div class="btn btn-mute pull-right" ng-click="main.collapseAllTabs(); main.serviceBus.validate('filterForm')" data-target="#header_filters">
+              <i class="glyphicon glyphicon-option-horizontal"></i>
+            </div>
+            <div class="form-group pull-right">
+
+              <div class="form-linked search-form pull-right">
+                <input ng-attr-exclude="{{!main._data.keyname}}" ng-change="main.keynameChange();" ng-model="main._data.keyname" type="text" name="keyname" class="search-input" ng-keyup="$event.keyCode == 13 && main.serviceBus.validate(filterForm.$name).valid && main.submit();" placeholder="{{main.tabs[main.activeTab].placeholder}}" ng-class="{'form-invalid': filterForm.keyname.$invalid }">
+                <a class="search-button" type="submit" ng-click="main.serviceBus.validate(filterForm.$name).valid && main.submit();"><i class="glyphicon glyphicon-search icon"></i></a>
+              </div>
+              <div class="form-linked pull-right">
+                <select ng-model="main.activeTab" ng-change="main.tabSelect();" ng-options="t.id as t.name for t in main.tabs"></select>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <transclude-template src="local_shared/filter_collapser.tmpl">
+
+      <uib-tabset active="main.activeTab" type="pills">
+        <uib-tab index="$index" ng-repeat="item in main.tabs" heading="{{item.name}}" ng-init="item.$index = $index;" deselect="main.tabDeselect($selectedIndex); main.serviceBus.validate(filterForm.$name);" select="main.getSchema(); main.tabSelect()">
+          <div ng-if="main.tabs[main.activeTab].isCollapsedFilter && item.$index===main.activeTab">
+            <div class="filter-box">
+
+              <filter-main data="main._data" type="main.getType()" filter-form="filterForm" search="main.search()" ctrl="FormFilterController" tmpl="filter/main.tmpl">
+                <ng-include src="'filter/footer.tmpl'" include-replace></ng-include>
+              </filter-main>
+
+            </div>
+          </div>
+        </uib-tab>
+      </uib-tabset>
+
+    </transclude-template>
+
+  </form>
+
+</div>

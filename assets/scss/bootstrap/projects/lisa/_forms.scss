@@ -1,0 +1,32 @@
+.select-full-width {
+  max-width: none;
+  width: 100%;
+}
+
+.select-md {
+  max-width: 130px;
+}
+
+.select-thin {
+  font-size: .929rem;
+  margin: 0 7px;
+  max-height: 28px;
+  padding: 3px 15px;
+}
+
+.filter-selection {
+  .customCheckbox + label,
+  .customRadio + label {
+    background-color: #f4f4f4;
+    margin: 6px;
+    padding: 10px 12px;
+  }
+
+  .customCheckbox:checked + label,
+  .customRadio:checked + label {
+    background: #ddedf1;
+    border: 1px solid #80ade3;
+    margin: 6px;
+    padding: 9px 11px;
+  }
+}

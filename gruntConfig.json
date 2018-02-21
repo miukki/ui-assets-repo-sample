@@ -1,0 +1,38 @@
+{
+	"app": {
+	  "scss": "assets/scss",
+	  "dist": "dist",
+	  "tmp": ".tmp",
+	  "views": "views",
+	  "tmpls": "assets/tmpls",
+	  "assets": "assets"
+	},
+	"viewport": ["320x480", "480x320", "384x640", "640x384", "602x963", "963x602", "600x960", "960x600", "800x1280", "1280x800", "768x1024", "1024x768"],
+	"bower": "bower_components",
+	"css": {
+		"resp": {
+			"launchpad": true,
+      "lmsst": true
+		},
+		"paths": {
+			"projects": "../bootstrap/projects",
+			"globals": "../bootstrap/global",
+			"mixins": "../bootstrap/mixins"
+
+		}
+
+	},
+	"bootstrap": {
+		"uiselect": {
+			"studytour": true,
+      "core": true
+		},
+		"v": {
+      "lmsst": ["2.2.0", "uib/"],
+			"lisa": ["2.2.0", "uib/"],
+			"studytour": ["2.2.0", "uib/"],
+			"rbac": ["0.13.4", ""],
+			"reactui": ["2.2.0", "uib/"],
+		}
+	}
+}

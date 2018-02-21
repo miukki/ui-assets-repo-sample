@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+cd node_modules/grunt-contrib-imagemin
+yarn add imagemin@4.0.0 --dev
+yarn add imagemin@2.3.0 --dev

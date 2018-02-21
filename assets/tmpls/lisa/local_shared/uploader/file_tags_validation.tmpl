@@ -1,0 +1,11 @@
+<!-- validation for array of file_tags  -->
+<div class="form-group">
+  <div class="row">
+    <div class="col-xs-12">
+      <p class="caption text-danger">
+        <span ng-show="form.file_tags.$invalid">请上传PDF格式的签字扫描件</span>
+        <input type="text" ng-attr-exclude="{{main._.isEmpty(main._data.file_tags)}}" name="file_tags" autovalidate ng-model="main._data.file_tags" ng-hide="true" />
+      </p>
+    </div>
+  </div>
+</div>

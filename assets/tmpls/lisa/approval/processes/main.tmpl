@@ -1,0 +1,31 @@
+<div class="page">
+
+  <!-- Main Header Bar -->
+  <div ng-controller="HeaderController as header">
+    <transclude-template src="local_shared/header.tmpl">
+      <a ng-href="/#/approval_rulesets">
+        <span class="glyphicon glyphicon-menu-left"></span>Approval Rulesets</a>
+      <h1 class="header-title-text" ng-bind="header.title"></h1>
+    </transclude-template>
+
+  </div>
+
+  <!-- Page Content -->
+  <div class="container-fluid">
+    <div class="content-container">
+
+      <div class="content-box">
+        <div class="row">
+          <div class="col-xs-6">
+            <h3 class="content-title-text">{{ main.title }} ({{main.total_count}}）</h3>
+          </div>
+          <div class="col-xs-6 text-top-right">
+          </div>
+        </div>
+        <div st-batch-list items-limit="70" items-by-page="10" template-url="approval/processes/table_body.tmpl" batch-fn="main.getApprovalProcesses(arg)"></div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

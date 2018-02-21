@@ -1,0 +1,21 @@
+<table class="table hover" st-table="displayedItems" st-safe-src="items">
+  <thead>
+    <tr>
+      <th st-sort="name" class="sortable" width="110">Name<i class="fa fa-arrow-up"></i><i class="fa fa-arrow-down"></i></th>
+      <th st-sort="description" class="sortable" width="100">Description</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="item in displayedItems" ng-init="dItem=item;">
+    <tr normalize normalize-item="dItem" normalize-type="ApprovalProcess,list">
+      <td><a href="/#/approval_rulesets/{{ dItem.approval_ruleset_id }}/approval_processes/{{ dItem.id }}">{{dItem.name}}</a></td>
+      <td>{{dItem.description}}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="2" class="text-center">
+        <div st-batch-pagination></div>
+      </td>
+    </tr>
+  </tfoot>
+</table>

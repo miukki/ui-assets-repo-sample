@@ -1,0 +1,119 @@
+
+<!-- build:template:lisa
+/*!
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/*for angular-bootstrap components*/
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+// Variables
+@import "<%= sourceSass %>/variables";
+@import "<%= globals %>/global-variables";
+
+// Mixins vendor
+@import "<%= sourceSass %>/mixins/vendor-prefixes";
+@import "<%= sourceSass %>/mixins/tab-focus";
+@import "<%= sourceSass %>/mixins/image";
+@import "<%= sourceSass %>/mixins/text-emphasis";
+@import "<%= sourceSass %>/mixins/background-variant";
+@import "<%= sourceSass %>/mixins/clearfix";
+@import "<%= sourceSass %>/mixins/text-overflow";
+@import "<%= sourceSass %>/mixins/grid-framework";
+@import "<%= sourceSass %>/mixins/table-row";
+@import "<%= sourceSass %>/mixins/forms";
+@import "<%= sourceSass %>/mixins/opacity";
+@import "<%= sourceSass %>/mixins/nav-divider";
+@import "<%= sourceSass %>/mixins/reset-filter";
+@import "<%= sourceSass %>/mixins/border-radius";
+@import "<%= sourceSass %>/mixins/nav-vertical-align";
+@import "<%= sourceSass %>/mixins/pagination";
+@import "<%= sourceSass %>/mixins/labels";
+@import "<%= sourceSass %>/mixins/gradients";
+@import "<%= sourceSass %>/mixins/panels";
+@import "<%= sourceSass %>/mixins/reset-text";
+@import "<%= sourceSass %>/mixins/center-block";
+@import "<%= sourceSass %>/mixins/hide-text";
+
+// Mixins custom
+@import "<%= mixins %>/buttons";
+@import "<%= mixins %>/grid";
+@import "<%= mixins %>/global_mixins";
+
+// Reset and dependencies
+@import "<%= sourceSass %>/normalize";
+
+// glyphicons
+@import "../bootstrap/glyphicons";
+@import "<%= projects %>/<%= proj %>/glyphicons";
+
+// Core CSS
+@import "<%= sourceSass %>/scaffolding";
+@import "../bootstrap/type";
+//@import "<%= sourceSass %>/code";
+@import "<%= sourceSass %>/grid";
+@import "<%= sourceSass %>/tables";
+@import "../bootstrap/forms";
+@import "<%= sourceSass %>/buttons";
+
+// Components
+@import "<%= sourceSass %>/component-animations";
+@import "<%= sourceSass %>/dropdowns";
+@import "<%= sourceSass %>/button-groups";
+@import "../bootstrap/input-groups";
+@import "<%= sourceSass %>/navs";
+@import "<%= sourceSass %>/navbar";
+@import "../bootstrap/pagination";
+@import "<%= sourceSass %>/labels";
+@import "<%= projects %>/<%= proj %>/panels";
+@import "<%= sourceSass %>/close";
+
+// Components w/ JavaScript
+@import "../bootstrap/modals";
+@import "<%= sourceSass %>/tooltip";
+
+// Utility classes
+@import "<%= sourceSass %>/utilities";
+
+// UI Components icons
+@import "<%= globals %>/global-icons";
+
+// UI Form Components
+@import "<%= globals %>/global-forms/forms-basic";
+@import "<%= globals %>/global-forms/forms-disabled_readonly";
+@import "<%= globals %>/global-forms/forms-dropdown";
+@import "<%= globals %>/global-forms/forms-invalid";
+@import "<%= globals %>/global-forms/forms-multi_radio_checkbox";
+@import "<%= globals %>/global-forms/forms-radio_checkbox";
+@import "<%= globals %>/global-forms/forms-search_dates";
+@import "<%= globals %>/global-forms/forms-small_fields";
+@import "<%= globals %>/global-forms/forms-table_thin";
+@import "<%= globals %>/global-forms/forms-textarea";
+
+// UI Table Components
+@import "<%= globals %>/global-table/table-basic";
+@import "<%= globals %>/global-table/table-multi_line";
+
+@import "<%= globals %>/global-page";
+@import "<%= globals %>/global-header";
+@import "<%= globals %>/global-nav";
+@import "<%= globals %>/global-typography";
+@import "<%= globals %>/global-animate";
+@import "<%= globals %>/global-btn";
+@import "<%= globals %>/global-modal";
+@import "<%= globals %>/global-accordion";
+@import "<%= globals %>/global-error_page";
+@import "<%= globals %>/global-tags";
+@import "<%= globals %>/global-datepicker";
+@import "<%= globals %>/global-status";
+@import "<%= globals %>/global-select";
+@import "<%= globals %>/global-alerts";
+
+@import "../bootstrap/fa";
+@import "<%= projects %>/<%= proj %>/fa";
+
+/build -->
+
+
